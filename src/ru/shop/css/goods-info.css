@@ -1,0 +1,31 @@
+.title{
+    text-align: center;
+}
+
+.image-block{
+    float: left;
+    width: 40%;
+    overflow: hidden;
+}
+
+.info-block{
+    width: 30%;
+    right: 30%;
+    overflow: hidden;
+}
+
+.order-ref-block{
+    right: 0;
+    left: 70%;
+    width: 30%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.layout{
+    position: relative;
+}
+
+.layout DIV{
+    position: absolute;
+}

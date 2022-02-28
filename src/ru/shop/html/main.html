@@ -7,35 +7,32 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/dal/GoodsDal.js"></script>
 <script src="../js/ui/main.js"></script>
+<link rel="stylesheet" href="../css/main.css">
 
-<table width="100%">
-    <tr><td width="60%" align="right"><h1>Shop Auto</h1></td>
-        <td width="20%" align="center">
+<div class="head">
+    <h1 class="site-name">Shop Auto</h1>
 <!--            <button id="button-login" onclick="toLoginPage()">Log in</button>-->
-            <a href="login-user.html">Log in</a>
-        </td>
-        <td align="left">
-            <a href="login-employee.html">For employee</a>
-        </td>
-    </tr>
-</table>
-<hr>
-<table width="100%" cellspacing="0" rules="cols">
-    <tr>
-        <td width="20%"></td>
-        <td width="60%" align="center">
-            <h1>Goods</h1>
-            <hr>
-            <table width="100%" rules="rows" id="goods-table">
-                <tr><td width="50%"><img src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg" width="200" height="200" align="center"></td>
-                    <td>Name: <a href="goods-info.html">Head Phone 34R</a> <p>Price: 2500</p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td width="20%"></td>
-    </tr>
-</table>
-<br>
+    <div class="login-refs">
+        <a href="login-user.html" id="login-user">Log in</a>
+        <a href="login-employee.html" id="login-employee">For employee</a>
+    </div>
+</div>
+<div class="right-block"></div>
+<div class="middle-block">
+    <div class="goods-title-block">
+        <h1 class="goods-title">Goods</h1>
+        <hr>
+    </div>
+    <div>
+        <div class="image">
+            <img src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg" width="200" height="200" align="center">
+        </div>
+        <div class="info">
+            Name: <a href="goods-info.html">Head Phone 34R</a>
+            <p>Price: 2500</p>
+        </div>
+    </div>
+</div>
+<div class="left-block"></div>
 </body>
 </html>

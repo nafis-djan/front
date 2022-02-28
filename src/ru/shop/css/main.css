@@ -1,0 +1,63 @@
+.site-name{
+    text-align: center;
+}
+
+.login-refs{
+    float: right;
+    width: 100%;
+    text-align: right;
+    border-bottom: 2px solid#333;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.head{
+    width: 100%;
+    height: 50px;
+}
+
+#login-user{
+    margin-right: 100px;
+}
+
+.left-block{
+    float: left;
+    width: 30%;
+    overflow: hidden;
+}
+
+.middle-block{
+    margin: 0 auto;
+    width: 40%;
+    border-right: 2px solid#333;
+    border-left: 2px solid#333;
+    overflow: hidden;
+}
+
+.right-block{
+    float: right;
+    overflow: hidden;
+    width: 30%;
+}
+
+.goods-title{
+    text-align: center;
+    overflow: hidden;
+}
+
+.goods-title-block{
+    float: top;
+    overflow: hidden;
+}
+
+.image{
+    float: left;
+    width: 50%;
+    overflow: hidden;
+}
+
+.info{
+    width: 50%;
+    float: right;
+    margin-top: 50px;
+}

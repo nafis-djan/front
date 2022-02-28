@@ -1,0 +1,27 @@
+.login-employee-title{
+    text-align: center;
+}
+
+.login-employee-layout{
+    position: relative;
+}
+
+.login-employee-layout DIV{
+    position: absolute;
+}
+
+.left-block{
+    left: 0;
+    right: 20%;
+}
+
+.middle-block{
+    text-align: center;
+    right: 20%;
+    left: 20%;
+}
+
+.right-block{
+    right: 0;
+    left: 80%;
+}

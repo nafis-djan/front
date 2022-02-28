@@ -8,32 +8,32 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/dal/GoodsDal.js"></script>
 <script src="../js/ui/goods-info.js"></script>
+<link rel="stylesheet" href="../css/goods-info.css">
 
-<h1 align="center">Information about goods</h1>
+<h1 class="title">Information about goods</h1>
 <hr>
-<table width="100%">
-    <tr><td width="40%">
-            <img id="image" width="500" height="500" src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg">
-        </td>
-        <td>
-            <table width="100%">
-                <tr><td><p>Description</p></td></tr>
-                <tr><td width="20%">Name: </td>     <td id="name">Head Phone 34R</td></tr>
-                <tr><td>Price: </td>                <td id="price">2500</td></tr>
-                <tr><td>Producer name: </td>        <td id="producer-name">Philips</td></tr>
-                <tr><td>Producer country: </td>     <td id="producer-country">Germany</td></tr>
-                <tr><td>Category: </td>             <td id="category">headphones</td></tr>
-                <tr><td>Count: </td>                <td id="count">349</td></tr>
-            </table>
-        </td>
-    </tr>
-</table>
-<br>
-<br>
-<br>
-<div align="center">
-<!--    <button id="button-order">Order</button>-->
-    <a href="order.html">Order it!</a>
+<div class="layout">
+    <div class="image-block">
+        <img id="image" width="500" height="500" src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg">
+    </div>
+    <div class="info-block">
+        <p>Description</p>
+        <br>
+        <p><b>Name: </b><span id="name">Head Phone 34R</span></p>
+        <p><b>Price: </b><span id="price">2500</span></p>
+        <p><b>Producer name: </b><span id="producer-name">Philips</span></p>
+        <p><b>Producer country: </b><span id="producer-country">Germany</span></p>
+        <p><b>Category: </b><span id="category">headphones</span></p>
+        <p><b>Count: </b><span id="count">349</span></p>
+
+    </div>
+    <div class="order-ref-block">
+    <!--    <button id="button-order">Order</button>-->
+        <br>
+        <br>
+        <br>
+       <a href="order.html" id="click-order">Order it!</a>
+    </div>
 </div>
 </body>
 </html>

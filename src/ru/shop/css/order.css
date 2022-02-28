@@ -1,0 +1,31 @@
+.title{
+    text-align: center;
+}
+
+.layout{
+    position: relative;
+}
+
+.layout DIV{
+    position: absolute;
+}
+
+.left-block{
+    left: 0;
+    right: 30%;
+}
+
+.middle-block{
+    text-align: center;
+    right: 30%;
+    left: 30%;
+    border-bottom: 2px solid#333;
+    border-left: 2px solid#333;
+    border-right: 2px solid#333;
+}
+
+.right-block{
+    text-align: center;
+    right: 0;
+    left: 70%;
+}

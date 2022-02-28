@@ -8,26 +8,23 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/dal/UserDal.js"></script>
 <script src="../js/ui/login.js"></script>
+<link rel="stylesheet" href="../css/login-user.css">
 
-<h1 align="center">Login</h1>
+<h1 class="login-user-title">Login</h1>
 <hr>
-<div>
-    <table width="100%">
-        <tr><td width="20%"></td><td width="60%" align="center"><p>E-mail</p></td><td width="20%"></td></tr>
-        <tr><td width="20%"></td><td width="60%" align="center"><input id="email1" type="text"></td><td width="20%"></td></tr>
-        <tr><td width="20%"></td><td width="60%" align="center"><p>Password</p></td><td width="20%"></td></tr>
-        <tr><td width="20%"></td><td width="60%" align="center"><input id="password1" type="password"></td><td width="20%"></td></tr>
-    </table>
-</div>
-<br>
-<br>
-<div align="center">
-    <button id="button-login1" onclick="getJson()">Login</button>
-</div>
-<p align="center">or</p>
-<div align="center">
-<!--    <button id="button-sign-up">Sign Up</button>-->
-    <a href="sign-up.html">Sign Up</a>
+<div class="login-user-layout">
+    <div class="left-block"></div>
+    <div class="middle-block">
+        <p>E-mail</p>
+        <input id="email1" type="text">
+        <p>Password</p>
+        <input id="password1" type="password">
+        <p><button id="button-login1" onclick="getJson()">Login</button></p>
+        <p>or</p>
+        <!--    <button id="button-sign-up">Sign Up</button>-->
+        <a href="sign-up.html">Sign Up</a>
+    </div>
+    <div class="right-block"></div>
 </div>
 </body>
 </html>

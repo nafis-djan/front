@@ -1,0 +1,27 @@
+.login-user-title{
+    text-align: center;
+}
+
+.login-user-layout{
+    position: relative;
+}
+
+.login-user-layout DIV{
+    position: absolute;
+}
+
+.left-block{
+    left: 0;
+    right: 20%;
+}
+
+.middle-block{
+    text-align: center;
+    right: 20%;
+    left: 20%;
+}
+
+.right-block{
+    right: 0;
+    left: 80%;
+}
