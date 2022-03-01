@@ -14,18 +14,35 @@ function showGoods(data){
     const content = data.content;
     let idSuffix = 0;
     content.forEach(el => {
-        const tableRow = document.createElement("tr");
-        tableRow.setAttribute("id", "row" + idSuffix);
-        const idRow = "#row" + idSuffix;
+        const outBlock = document.createElement("div")
+        outBlock.setAttribute("id", "out-block" + idSuffix);
+        const idOutBlock = "#out-block" + idSuffix;
 
-        const tableDataImage = document.createElement("td");
-        tableDataImage.setAttribute("id", "td" + idSuffix);
-        tableDataImage.setAttribute("width", "50%");
-        const idTdImage = "#td" + idSuffix;
+        const blockImage = document.createElement("div");
+        blockImage.setAttribute("id", "block-image" + idSuffix);
+        const idBlockImage = "#block-image" + idSuffix;
+        blockImage.style.textAlign = "center";
+        blockImage.style.float = "left";
+        blockImage.style.width = "50%";
+        blockImage.style.overflow = "hidden";
 
-        const tableDataText = document.createElement("td");
-        tableDataText.setAttribute("id", "td" + ++idSuffix);
-        const idTdText = "#td" + idSuffix;
+        const blockInfo = document.createElement("div");
+        blockInfo.setAttribute("id", "block-info" + idSuffix);
+        const idBlockInfo = "#block-info" + idSuffix;
+        blockInfo.style.width = "50%";
+        blockInfo.style.float = "right";
+        blockInfo.style.marginTop = "50px";
+        blockInfo.style.height = "200px";
+
+        const pName = document.createElement("p");
+        pName.setAttribute("id", "p-name" + idSuffix);
+        const idPName = "#p-name" + idSuffix;
+        pName.textContent = "Name: "
+
+        const pPrice = document.createElement("p");
+        pPrice.setAttribute("id", "p-price" + idSuffix);
+        const idPPrice = "#p-price" + idSuffix;
+        pPrice.textContent = "Price: "
 
         const img = document.createElement("img");
         img.src = el.imageUrl;
@@ -34,21 +51,20 @@ function showGoods(data){
 
         const link = document.createElement("a");
         link.href = "goods-info.html";
-        link.textContent = "name: " + el.name;
+        link.textContent = el.name;
         link.setAttribute("onclick", `toGoodsInfoPage(${el.id})`);
 
-        const br = document.createElement("br");
+        const price = document.createElement("span");
+        price.textContent = el.price;
 
-        const price = document.createElement("p");
-        price.textContent = "price: " + el.price;
-
-        document.querySelector("#goods-table").appendChild(tableRow);
-        document.querySelector(idRow).appendChild(tableDataImage);
-        document.querySelector(idRow).appendChild(tableDataText);
-        document.querySelector(idTdImage).appendChild(img);
-        document.querySelector(idTdText).appendChild(link);
-        document.querySelector(idTdText).appendChild(br);
-        document.querySelector(idTdText).appendChild(price);
+        document.querySelector("#middle-block").appendChild(outBlock);
+        document.querySelector(idOutBlock).appendChild(blockImage);
+        document.querySelector(idOutBlock).appendChild(blockInfo);
+        document.querySelector(idBlockImage).appendChild(img);
+        document.querySelector(idBlockInfo).appendChild(pName);
+        document.querySelector(idBlockInfo).appendChild(pPrice);
+        document.querySelector(idPName).appendChild(link);
+        document.querySelector(idPPrice).appendChild(price);
 
         ++idSuffix;
     });
@@ -56,8 +72,4 @@ function showGoods(data){
 
 function toGoodsInfoPage(goodsId){
     localStorage.setItem("goodsId", goodsId);
-}
-
-function toLoginPage(){
-    window.location.replace("login-user.html");
 }

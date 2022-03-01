@@ -26,7 +26,7 @@
     overflow: hidden;
 }
 
-.middle-block{
+#middle-block{
     margin: 0 auto;
     width: 40%;
     border-right: 2px solid#333;
@@ -48,16 +48,4 @@
 .goods-title-block{
     float: top;
     overflow: hidden;
-}
-
-.image{
-    float: left;
-    width: 50%;
-    overflow: hidden;
-}
-
-.info{
-    width: 50%;
-    float: right;
-    margin-top: 50px;
 }
