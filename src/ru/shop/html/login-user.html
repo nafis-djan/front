@@ -7,7 +7,7 @@
 <body>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/dal/UserDal.js"></script>
-<script src="../js/ui/login.js"></script>
+<script src="../js/ui/Login.js"></script>
 <link rel="stylesheet" href="../css/login-user.css">
 
 <h1 class="login-user-title">Login</h1>
@@ -16,13 +16,12 @@
     <div class="left-block"></div>
     <div class="middle-block">
         <p>E-mail</p>
-        <input id="email1" type="text">
+        <input id="email" type="text">
         <p>Password</p>
-        <input id="password1" type="password">
+        <input id="password" type="password">
         <p><button id="button-login1" onclick="getJson()">Login</button></p>
         <p>or</p>
-        <!--    <button id="button-sign-up">Sign Up</button>-->
-        <a href="sign-up.html">Sign Up</a>
+        <button id="button-sign-up" onclick="toSignUpPage()">Sign Up</button>
     </div>
     <div class="right-block"></div>
 </div>

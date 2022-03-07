@@ -1,3 +1,5 @@
+initHeader();
+
 const goodsId = localStorage.getItem("goodsId");
 
 const goods = getGoodsById(goodsId);
@@ -24,4 +26,20 @@ function showGoodsInfo(goods){
 
     const image = document.querySelector("#image");
     image.src = goods.imageUrl;
+}
+
+function addGoodsToBasket(){
+    const count = document.getElementById("goods-count").value;
+    const json = {
+        "count" : count
+    };
+    const created = createSelectedProduct(1, goodsId, JSON.stringify(json));
+    created.then(data => {
+        showSuccessText(data);
+    })
+}
+
+function showSuccessText(data){
+    const text = document.querySelector("#adding-text");
+    text.textContent = "Goods added to basket successfully. Watch your basket in personal cabinet";
 }

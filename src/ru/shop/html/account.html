@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User account</title>
 </head>
 <body>
-
+<div id="head">
+    <h1 class="page-name">Personal cabinet</h1>
+</div>
+<hr>
+<div class="left-block">
+    <h1 class="left-block-name">User information</h1>
+    <hr>
+    <p><b>Name: </b><span id="name"></span></p>
+    <p><b>Email: </b><span id="email"></span></p>
+    <p><b>Phone: </b><span id="phone"></span></p>
+</div>
+<div id="middle-block">
+    <div class="orders-title-block">
+        <h1 class="orders-title">Orders</h1>
+        <hr>
+    </div>
+</div>
+<div id="right-block">
+    <h1 class="right-block-name">Basket</h1>
+    <hr>
+    <div id="products"></div>
+    <div id="order-button-block"></div>
+</div>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="../js/cookie/JqueryCookies.js"></script>
+<script src="../js/dal/UserDal.js"></script>
+<script src="../js/dal/SelectedProductsDal.js"></script>
+<script src="../js/creating/AddingElements.js"></script>
+<script src="../js/ui/SelectedProducts.js"></script>
+<script src="../js/dal/GoodsDal.js"></script>
+<script src="../js/dal/OrderDal.js"></script>
+<script src="../js/ui/InitHeader.js"></script>
+<script src="../js/ui/Account.js"></script>
+<link rel="stylesheet" href="../css/account.css">
 </html>

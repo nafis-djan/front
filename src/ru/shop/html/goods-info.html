@@ -5,35 +5,45 @@
     <title>Information about goods</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-<script src="../js/dal/GoodsDal.js"></script>
-<script src="../js/ui/goods-info.js"></script>
-<link rel="stylesheet" href="../css/goods-info.css">
+<div id="head">
+    <h1 class="title">Information about goods</h1>
+    <div id="child-head">
 
-<h1 class="title">Information about goods</h1>
+    </div>
+</div>
+
 <hr>
 <div class="layout">
     <div class="image-block">
-        <img id="image" width="500" height="500" src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg">
+        <img id="image" width="500" height="500">
     </div>
     <div class="info-block">
         <p>Description</p>
         <br>
-        <p><b>Name: </b><span id="name">Head Phone 34R</span></p>
-        <p><b>Price: </b><span id="price">2500</span></p>
-        <p><b>Producer name: </b><span id="producer-name">Philips</span></p>
-        <p><b>Producer country: </b><span id="producer-country">Germany</span></p>
-        <p><b>Category: </b><span id="category">headphones</span></p>
-        <p><b>Count: </b><span id="count">349</span></p>
+        <p><b>Name: </b><span id="name"></span></p>
+        <p><b>Price: </b><span id="price"></span></p>
+        <p><b>Producer name: </b><span id="producer-name"></span></p>
+        <p><b>Producer country: </b><span id="producer-country"></span></p>
+        <p><b>Category: </b><span id="category"></span></p>
+        <p><b>Count: </b><span id="count"></span></p>
 
     </div>
     <div class="order-ref-block">
-    <!--    <button id="button-order">Order</button>-->
         <br>
         <br>
         <br>
-       <a href="order-info.html" id="click-order">Order it!</a>
+        <label for="goods-count">Enter count </label><input id="goods-count" type="number">
+        <button id="button-order" onclick="addGoodsToBasket()">Add to basket</button>
+        <p id="adding-text"></p>
     </div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="../js/cookie/JqueryCookies.js"></script>
+<script src="../js/dal/GoodsDal.js"></script>
+<script src="../js/dal/UserDal.js"></script>
+<script src="../js/dal/SelectedProductsDal.js"></script>
+<script src="../js/ui/InitHeader.js"></script>
+<script src="../js/ui/GoodsInfo.js"></script>
+<link rel="stylesheet" href="../css/goods-info.css">
 </html>

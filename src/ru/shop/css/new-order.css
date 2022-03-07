@@ -16,26 +16,6 @@
     height: 50px;
 }
 
-.image-block{
-    float: left;
-    width: 40%;
-    overflow: hidden;
-}
-
-.info-block{
-    width: 30%;
-    right: 30%;
-    overflow: hidden;
-}
-
-.order-ref-block{
-    right: 0;
-    left: 70%;
-    width: 30%;
-    text-align: center;
-    overflow: hidden;
-}
-
 .layout{
     position: relative;
 }
@@ -44,6 +24,19 @@
     position: absolute;
 }
 
-#adding-text{
-    color: darkgreen;
+.left-block{
+    left: 50px;
+    width: 50%;
+}
+
+.right-block{
+    float: right;
+    right: 20px;
+    width: 40%;
+    overflow: hidden;
+    border-left: 2px solid#333;
+}
+
+.title-info-order{
+    text-align: center;
 }
