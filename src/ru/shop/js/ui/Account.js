@@ -129,3 +129,9 @@ function toNewOrderPage(){
     document.cookie = `orderId=${basketId}`;
     window.location.href = "new-order.html";
 }
+
+function exitFromAccount(){
+    $.removeCookie("token");
+
+    window.location.href = "main.html";
+}

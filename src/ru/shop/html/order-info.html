@@ -2,37 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order</title>
+    <title>Doing order</title>
 </head>
 <body>
-<link rel="stylesheet" href="../css/order-info.css">
-
 <div id="head">
     <h1 class="title">Order</h1>
-    <div id="child-head">
-
-    </div>
+    <div id="child-head"></div>
 </div>
-
 <hr>
-<div class="layout">
-    <div class="left-block"></div>
-    <div class="middle-block">
-        <h2 align="center">Selected products</h2>
-        <br>
-        <p><b>Name: </b><span id="goods-name">Head Phone 34R</span></p>
-        <p><b>Price: </b><span id="goods-price">2500</span></p>
-        <img id="goods-image" width="200" height="200" src="https://www.ixbt.com/img/r30/00/02/20/21/audeze.jpg">
-    </div>
-    <div class="right-block">
-        <h2 align="center">Information about order</h2>
-        <p><b>Total price: </b><span id="total-price">2500</span></p>
-        <p><b>Address: </b><span id="address">Kazan, Mavlytovo,10</span></p>
-        <p><b>Pay method: </b><span id="paymentType">bank card online</span></p>
-        <p><b>Receive method: </b><span id="receiveMethod">pickup</span></p>
-        <p><b>Status: </b><span id="orderStatus">creating</span></p>
-        <button id="order-button">Order</button>
-    </div>
+<div class="right-block">
+    <h2 align="center">Selected products</h2>
+    <br>
+    <div id="selected-products"></div>
+</div>
+<div class="left-block">
+    <h2 class="title-info-order">Information about order</h2>
+    <p><b>Total price: </b><span id="total-price"></span></p>
+    <p><b>Receiving method: </b></p><span id="receiveMethod"></span>
+    <p><b>Address: </b></p><span id="address"></span>
+    <p><b>Pay method: </b></p><span id="paymentType"></span>
+    <p><b>Order status: </b></p><span id="orderStatus"></span>
+    <p><b>Bill status: </b></p><span id="billStatus"></span>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="../js/cookie/JqueryCookies.js"></script>
+<script src="../js/dal/SelectedProductsDal.js"></script>
+<script src="../js/dal/ReceivingDal.js"></script>
+<script src="../js/dal/UserDal.js"></script>
+<script src="../js/dal/EnumDal.js"></script>
+<script src="../js/creating/AddingElements.js"></script>
+<script src="../js/ui/SelectedProducts.js"></script>
+<script src="../js/dal/OrderDal.js"></script>
+<script src="../js/ui/InitHeader.js"></script>
+<script src="../js/ui/OrderInfo.js"></script>
+<link rel="stylesheet" href="../css/new-order.css">
 </html>

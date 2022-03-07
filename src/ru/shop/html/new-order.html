@@ -18,18 +18,23 @@
 <div class="left-block">
     <h2 class="title-info-order">Information about order</h2>
     <p><b>Total price: </b><span id="total-price">2500</span></p>
-    <p><b>Address: </b><span id="address">Kazan, Mavlytovo,10</span></p>
-    <p><b>Pay method: </b><span id="paymentType">bank card online</span></p>
-    <p><b>Receive method: </b><span id="receiveMethod">pickup</span></p>
-    <p><b>Status: </b><span id="orderStatus">creating</span></p>
-    <button id="order-button">Order</button>
+    <p><b>Receiving: </b></p>
+        <span id="receiving"></span>
+    <p><b>Pay method: </b></p>
+        <span id="paymentType"></span>
+    <br>
+    <button id="order-button" onclick="doOrder()">Order</button>
+    <br>
+    <span id="message"></span>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/cookie/JqueryCookies.js"></script>
+<script src="../js/dal/SelectedProductsDal.js"></script>
+<script src="../js/dal/ReceivingDal.js"></script>
+<script src="../js/dal/EnumDal.js"></script>
 <script src="../js/creating/AddingElements.js"></script>
 <script src="../js/ui/SelectedProducts.js"></script>
-<script src="../js/dal/SelectedProductsDal.js"></script>
 <script src="../js/dal/OrderDal.js"></script>
 <script src="../js/ui/InitHeader.js"></script>
 <script src="../js/ui/NewOrder.js"></script>

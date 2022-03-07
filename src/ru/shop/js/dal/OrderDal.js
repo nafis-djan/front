@@ -10,3 +10,14 @@ function getOrderById(id){
     });
 }
 
+function updateNewOrder(orderId, json, receiveId){
+    return $.ajax({url : `http://localhost:8080/orders/${orderId}?receivingId=${receiveId}`,
+        type : "PATCH",
+        contentType : "application/json",
+        dataType : "json",
+        data: json,
+        headers: {"Access-Control-Allow-Origin": "*",
+            "AUTHORIZATION" : `${$.cookie("token")}`},
+        crossDomain: true});
+}
+
