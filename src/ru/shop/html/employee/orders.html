@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+<div id="head">
+    <h1 class="title">Orders</h1>
+    <div id="child-head"></div>
+</div>
+<hr>
+<div id="left-block">
+    <h2>Filter</h2>
+    <p><b>Order status:</b></p>
+    <span id="order-statuses"></span>
+    <br>
+    <button id="apply-button" onclick="doFilter()">Apply</button>
+    <br>
+    <button id="cancel-button" onclick="cancelFilter()">Cancel</button>
+</div>
+<div id="middle-block">
+    <h2 class="middle-name">List of orders</h2>
+    <div id="search-block">
+        <label for="search-by-id">Enter ID </label>
+        <input id="search-by-id" type="number">
+        <button id="search-button" onclick="doSearch()">Search</button>
+    </div>
+</div>
+<div id="right-block">
+    <h2 class="right-name">Edit</h2>
+    <span id="order-statuses-edit"></span>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="../../js/cookie/JqueryCookies.js"></script>
+<script src="../../js/creating/AddingElements.js"></script>
+<script src="../../js/creating/ShowOrders.js"></script>
+<script src="../../js/dal/OrderDal.js"></script>
+<script src="../../js/dal/EnumDal.js"></script>
+<script src="../../js/dal/SelectedProductsDal.js"></script>
+<script src="../../js/ui/user/InitHeader.js"></script>
+<script src="../../js/ui/employee/Orders.js"></script>
+<link rel="stylesheet" href="../../css/employee/orders.css">
+</html>

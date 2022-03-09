@@ -1,0 +1,48 @@
+.title{
+    text-align: center;
+}
+
+#child-head{
+    float: right;
+    width: 100%;
+    text-align: right;
+    border-bottom: 2px solid#333;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#head{
+    width: 100%;
+    height: 50px;
+}
+
+#left-block{
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#middle-block{
+    position: absolute;
+    left: 30%;
+    right: 35%;
+    width: 35%;
+    border-right: 2px solid#333;
+    border-left: 2px solid#333;
+    overflow: hidden;
+}
+
+#right-block{
+    float: right;
+    overflow: hidden;
+    width: 34.5%;
+}
+
+.middle-name{
+    text-align: center;
+}
+
+.right-name{
+    text-align: center;
+}

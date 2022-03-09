@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit goods</title>
+</head>
+<body>
+<h1 class="title">Edit goods</h1>
+<hr>
+<div class="layout">
+    <div class="left-block"></div>
+    <div class="middle-block">
+        <p>Name</p>
+        <input id="name" type="text">
+        <p>Price</p>
+        <input id="price" type="number">
+        <p>Count</p>
+        <input id="count" type="number">
+        <p>Image URL</p>
+        <input id="image" type="text">
+        <p><button id="button-edit" onclick="editGoods()">Edit</button></p>
+    </div>
+    <div class="right-block"></div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="../../js/cookie/JqueryCookies.js"></script>
+<script src="../../js/dal/GoodsDal.js"></script>
+<script src="../../js/ui/admin/EditGoods.js"></script>
+<link rel="stylesheet" href="../../css/user/sign-up.css">
+</html>
