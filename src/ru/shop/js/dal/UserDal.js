@@ -23,3 +23,27 @@ function getUserById(id){
     headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
     });
 }
+
+function getAllEmployees(){
+    return $.ajax({url : `http://localhost:8080/users`,
+        headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
+    });
+}
+
+function deleteEmployee(id){
+    $.ajax({url : `http://localhost:8080/users/${id}`,
+        type : "DELETE",
+        headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
+    });
+}
+
+function updateUser(id, json){
+    return $.ajax({url : `http://localhost:8080/users/${id}`,
+        type : "PATCH",
+        contentType : "application/json",
+        dataType : "json",
+        data: json,
+        headers: {"Access-Control-Allow-Origin": "*",
+            "AUTHORIZATION" : `${$.cookie("token")}`},
+        crossDomain: true});
+}

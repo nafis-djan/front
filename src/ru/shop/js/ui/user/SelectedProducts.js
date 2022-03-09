@@ -14,8 +14,8 @@ function showSelectedProducts(basket, divName) {
 
 function createSelProdElements(selProduct, idSuffix){
     const outBlock = createOutBlock(idSuffix);
-    const blockImage = createBlockImage(idSuffix);
-    const blockInfo = createBlockInfo(idSuffix);
+    const blockImage = createLeftBlock(idSuffix);
+    const blockInfo = createRightBlock(idSuffix);
     const nameField = createNameField(idSuffix);
     const priceField = createPriceField(idSuffix);
 

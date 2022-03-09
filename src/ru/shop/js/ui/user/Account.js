@@ -38,39 +38,7 @@ function showOrders(data){
     let idSuffix = 0;
     content.forEach(el => {
         if(el.orderStatus !== "CREATING") {
-            const orderInfo = document.createElement("div");
-            orderInfo.setAttribute("id", "order-info" + idSuffix);
-            orderInfo.style.borderBottom = "2px solid#333"
-
-            const idField = document.createElement("p");
-            idField.setAttribute("id", "p-id" + idSuffix);
-            idField.textContent = "Id: ";
-
-            const priceField = createPriceField(idSuffix);
-
-            const statusField = document.createElement("p");
-            statusField.setAttribute("id", "p-status" + idSuffix);
-            statusField.textContent = "Status: "
-
-            const link = document.createElement("a");
-            link.href = "order-info.html";
-            link.textContent = el.id;
-            link.setAttribute("onclick", `toOrderInfoPage(${el.id})`);
-
-            const price = document.createElement("span");
-            price.textContent = el.totalPrice;
-
-            const status = document.createElement("span");
-            status.textContent = el.orderStatus;
-
-            document.querySelector("#middle-block").appendChild(orderInfo);
-            document.querySelector("#" + orderInfo.getAttribute("id")).appendChild(idField);
-            document.querySelector("#" + orderInfo.getAttribute("id")).appendChild(priceField);
-            document.querySelector("#" + orderInfo.getAttribute("id")).appendChild(statusField);
-            document.querySelector("#" + idField.getAttribute("id")).appendChild(link);
-            document.querySelector("#" + priceField.getAttribute("id")).appendChild(price);
-            document.querySelector("#" + statusField.getAttribute("id")).appendChild(status);
-
+            createOrderElements("middle-block", el, idSuffix);
             ++idSuffix;
         } else {
             showBasket(el);
@@ -83,10 +51,6 @@ function showOrders(data){
 
         document.querySelector("#products").appendChild(text);
     }
-}
-
-function toOrderInfoPage(orderId){
-    localStorage.setItem("orderId", orderId);
 }
 
 function showBasket(basket){

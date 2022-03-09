@@ -9,8 +9,7 @@ function initHeader(){
 }
 
 function showUserName(){
-    // const user = getUserById($.cookie("userId"));
-    const user = getUserById(1);
+    const user = getUserById($.cookie("userId"));
     user.then(data => {
         createElements(data);
     })
@@ -32,10 +31,17 @@ function showLogin(){
     userLogin.style.marginRight = "100px";
 
     const employeeLogin = document.createElement("a");
-    employeeLogin.href = "login-employee.html";
+    employeeLogin.href = "../employee/login-employee.html";
     employeeLogin.textContent = "For employee";
     employeeLogin.id = "login-employee";
+    employeeLogin.style.marginRight = "100px";
+
+    const adminLogin = document.createElement("a");
+    adminLogin.href = "../admin/login-admin.html";
+    adminLogin.textContent = "For admin";
+    adminLogin.id = "login-admin";
 
     document.querySelector("#child-head").appendChild(userLogin);
     document.querySelector("#child-head").appendChild(employeeLogin);
+    document.querySelector("#child-head").appendChild(adminLogin);
 }

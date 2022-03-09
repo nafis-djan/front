@@ -3,3 +3,9 @@ function getAllPaymentTypes(){
         headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
     });
 }
+
+function getAllOrderStatuses(){
+    return $.ajax({url : `http://localhost:8080/order-statuses`,
+        headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
+    });
+}

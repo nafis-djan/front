@@ -21,3 +21,14 @@ function updateNewOrder(orderId, json, receiveId){
         crossDomain: true});
 }
 
+function updateOrder(orderId, json){
+    return $.ajax({url : `http://localhost:8080/orders/${orderId}`,
+        type : "PATCH",
+        contentType : "application/json",
+        dataType : "json",
+        data: json,
+        headers: {"Access-Control-Allow-Origin": "*",
+            "AUTHORIZATION" : `${$.cookie("token")}`},
+        crossDomain: true});
+}
+

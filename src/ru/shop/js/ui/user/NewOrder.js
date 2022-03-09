@@ -53,30 +53,7 @@ function showReceiving(page){
 }
 
 function showPaymentType(list){
-    const paymentTypes = list.collection;
-    let idSuffix = 0;
-    paymentTypes.forEach(type => {
-        const radio = document.createElement("input");
-        radio.type = "radio";
-        radio.id = "radio" + idSuffix;
-        radio.name = "paymentType";
-        radio.value = type.paymentType;
-        if(idSuffix === 0){
-            radio.setAttribute("checked", "");
-        }
-
-        const label = document.createElement("label");
-        label.for = radio.getAttribute("id");
-        label.textContent = type.paymentType;
-
-        const br = document.createElement("br");
-
-        document.querySelector("#paymentType").appendChild(radio);
-        document.querySelector("#paymentType").appendChild(label);
-        document.querySelector("#paymentType").appendChild(br);
-
-        ++idSuffix;
-    });
+    createRadioButton(list, "payment-type", "paymentType", "paymentType", true);
 }
 
 function doOrder(){

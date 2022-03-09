@@ -7,7 +7,7 @@ function createOutBlock(idSuffix){
     return outBlock;
 }
 
-function createBlockImage(idSuffix){
+function createLeftBlock(idSuffix){
     const blockImage = document.createElement("div");
     blockImage.setAttribute("id", "block-image" + idSuffix);
     blockImage.style.textAlign = "center";
@@ -18,7 +18,7 @@ function createBlockImage(idSuffix){
     return blockImage;
 }
 
-function createBlockInfo(idSuffix){
+function createRightBlock(idSuffix){
     const blockInfo = document.createElement("div");
     blockInfo.setAttribute("id", "block-info" + idSuffix);
     blockInfo.style.width = "50%";
@@ -50,4 +50,37 @@ function createImage(width, height, idSuffix){
     img.height = height;
 
     return img;
+}
+
+function createRadioButton(list, divName, radioName, valueName, isDefault){
+    const content = list.collection;
+    let idSuffix = 0;
+    content.forEach(el => {
+        if(el[valueName] !== "CREATING") {
+            const value = el[valueName];
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.id = "radio" + idSuffix;
+            radio.name = radioName;
+            radio.value = value;
+
+            if (isDefault) {
+                if (idSuffix === 0) {
+                    radio.setAttribute("checked", "");
+                }
+            }
+
+            const label = document.createElement("label");
+            label.for = radio.getAttribute("id");
+            label.textContent = value;
+
+            const br = document.createElement("br");
+
+            document.querySelector("#" + divName).appendChild(radio);
+            document.querySelector("#" + divName).appendChild(label);
+            document.querySelector("#" + divName).appendChild(br);
+
+            ++idSuffix;
+        }
+    });
 }
