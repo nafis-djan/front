@@ -13,9 +13,8 @@ function start() {
 }
 
 function showGoods(data){
-    const content = data.content;
     let idSuffix = 0;
-    content.forEach(el => {
+    data.forEach(el => {
         const outBlock = createOutBlock(idSuffix);
         const blockImage = createLeftBlock(idSuffix);
         const blockInfo = createRightBlock(idSuffix);
@@ -28,7 +27,7 @@ function showGoods(data){
         const link = document.createElement("a");
         link.href = "goods-info.html";
         link.textContent = el.name;
-        link.setAttribute("onclick", `toGoodsInfoPage(${el.id})`);
+        link.setAttribute("onclick", `toGoodsInfoPage(${el._id})`);
 
         const price = document.createElement("span");
         price.textContent = el.price;

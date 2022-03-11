@@ -1,5 +1,5 @@
 function getAllGoods(page, size){
-    return $.ajax(`http://localhost:8080/goods?page=${page}&size=${size}`);
+    return $.ajax(`http://localhost:8080/goods`);
 }
 
 function getGoodsById(id){
