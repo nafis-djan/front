@@ -12,14 +12,11 @@ function showGoodsInfo(goods){
     const price = document.querySelector("#price");
     price.textContent = goods.price;
 
-    const producerName = document.querySelector("#producer-name");
-    producerName.textContent = goods.producer.name;
-
-    const producerCountry = document.querySelector("#producer-country");
-    producerCountry.textContent = goods.producer.country;
+    const producer = document.querySelector("#producer-name");
+    producer.textContent = goods.producer;
 
     const category = document.querySelector("#category");
-    category.textContent = goods.category.name;
+    category.textContent = goods.category;
 
     const count = document.querySelector("#count");
     count.textContent = goods.count;
@@ -33,7 +30,8 @@ function addGoodsToBasket(){
     const json = {
         "count" : count
     };
-    const created = createSelectedProduct(1, goodsId, JSON.stringify(json));
+
+    const created = createSelectedProduct($.cookie("user-email"),goodsId, JSON.stringify(json));
     created.then(data => {
         showSuccessText(data);
     })

@@ -1,12 +1,9 @@
-const size = 10;
-let page = 0;
-
 start();
 
 function start() {
     initHeader();
 
-    const goodsPage = getAllGoods(page, size);
+    const goodsPage = getAllGoods();
     goodsPage.then(data => {
         showGoods(data)
     });
@@ -27,7 +24,7 @@ function showGoods(data){
         const link = document.createElement("a");
         link.href = "goods-info.html";
         link.textContent = el.name;
-        link.setAttribute("onclick", `toGoodsInfoPage(${el._id})`);
+        link.setAttribute("onclick", `toGoodsInfoPage('${el._id}')`);
 
         const price = document.createElement("span");
         price.textContent = el.price;

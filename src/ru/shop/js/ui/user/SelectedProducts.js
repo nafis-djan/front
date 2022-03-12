@@ -5,30 +5,33 @@ function showSelectedProducts(basket, divName) {
     let idSuffix = 0;
 
     basket.selectedProducts.forEach(el => {
-        const selProduct = getSelectedProductById(el.id);
-        selProduct.then(data => {
-            createSelProdElements(data, ++idSuffix)
+        const selProduct = getSelectedProductById(el);
+        selProduct.then(selProduct => {
+            const goods = getGoodsById(selProduct.goods);
+            goods.then(goods => {
+                createSelProdElements(selProduct, goods, ++idSuffix)
+            });
         });
     });
 }
 
-function createSelProdElements(selProduct, idSuffix){
+function createSelProdElements(selProduct, goods, idSuffix){
     const outBlock = createOutBlock(idSuffix);
     const blockImage = createLeftBlock(idSuffix);
     const blockInfo = createRightBlock(idSuffix);
     const nameField = createNameField(idSuffix);
     const priceField = createPriceField(idSuffix);
 
-    const img = createImage(200, 200, idSuffix);
-    img.src = selProduct.goods.imageUrl;
+    const price = document.createElement("span");
+    price.textContent = selProduct.price;
 
     const link = document.createElement("a");
     link.href = "goods-info.html";
-    link.textContent = selProduct.goods.name;
-    link.setAttribute("onclick", `toGoodsInfoPage(${selProduct.goods.id})`);
+    link.textContent = goods.name;
+    link.setAttribute("onclick", `toGoodsInfoPage('${goods._id}')`);
 
-    const price = document.createElement("span");
-    price.textContent = selProduct.price;
+    const img = createImage(200, 200, idSuffix);
+    img.src = goods.imageUrl;
 
     document.querySelector("#" + mainDivName).appendChild(outBlock);
     document.querySelector("#" + outBlock.getAttribute("id")).appendChild(blockImage);

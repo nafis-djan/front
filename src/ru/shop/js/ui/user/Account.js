@@ -1,21 +1,20 @@
-const size = 10;
-const page = 0;
 let basketId;
 let isBasketExist = false;
+let isHaveOrder = false;
 
 start();
 
 function start() {
     showUserInfo();
 
-    const ordersPage = getOrders(1,page, size);
+    const ordersPage = getOrdersByUserEmail($.cookie("user-email"))
     ordersPage.then(data => {
         showOrders(data)
     });
 }
 
 function showUserInfo(){
-    const user = getUserById($.cookie("userId"));
+    const user = getUserByEmail($.cookie("user-email"));
     user.then(user => {
         const name = document.querySelector("#name");
         name.textContent = user.name;
@@ -33,11 +32,11 @@ function showUserInfo(){
     })
 }
 
-function showOrders(data){
-    const content = data.content;
+function showOrders(orders){
     let idSuffix = 0;
-    content.forEach(el => {
-        if(el.orderStatus !== "CREATING") {
+    orders.forEach(el => {
+        if (el.orderStatus !== "CREATING") {
+            isHaveOrder = true;
             createOrderElements("middle-block", el, idSuffix);
             ++idSuffix;
         } else {
@@ -45,7 +44,14 @@ function showOrders(data){
         }
     });
 
-    if(isBasketExist === false){
+    if(!isHaveOrder) {
+        const text = document.createElement("p");
+        text.textContent = "No orders";
+
+        document.querySelector("#middle-block").appendChild(text);
+    }
+
+    if(!isBasketExist){
         const text = document.createElement("p");
         text.textContent = "No basket";
 
@@ -55,7 +61,7 @@ function showOrders(data){
 
 function showBasket(basket){
     isBasketExist = true;
-    basketId = basket.id;
+    basketId = basket._id;
     let idSuffix = 0;
 
     const totalPriceField = document.createElement("p");
@@ -96,6 +102,5 @@ function toNewOrderPage(){
 
 function exitFromAccount(){
     $.removeCookie("token");
-
     window.location.href = "main.html";
 }

@@ -1,4 +1,4 @@
-function getAllGoods(page, size){
+function getAllGoods(){
     return $.ajax(`http://localhost:8080/goods`);
 }
 
@@ -6,8 +6,8 @@ function getGoodsById(id){
     return $.ajax(`http://localhost:8080/goods/${id}`);
 }
 
-function createGoods(json, producerId, categoryId){
-    return $.ajax({url : `http://localhost:8080/goods?producerId=${producerId}&categoryId=${categoryId}`,
+function createGoods(json){
+    return $.ajax({url : `http://localhost:8080/goods`,
         type : "POST",
         contentType : "application/json",
         dataType : "json",
@@ -26,7 +26,7 @@ function deleteGoods(id){
 
 function updateGoods(id, json){
     return $.ajax({url : `http://localhost:8080/goods/${id}`,
-        type : "PATCH",
+        type : "PUT",
         contentType : "application/json",
         dataType : "json",
         data: json,

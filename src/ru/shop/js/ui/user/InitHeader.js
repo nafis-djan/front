@@ -9,7 +9,7 @@ function initHeader(){
 }
 
 function showUserName(){
-    const user = getUserById($.cookie("userId"));
+    const user = getUserByEmail($.cookie("user-email"));
     user.then(data => {
         createElements(data);
     })

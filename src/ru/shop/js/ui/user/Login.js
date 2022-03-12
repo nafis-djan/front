@@ -6,7 +6,7 @@ function getJson(){
     const password = document.getElementById("password").value;
 
     const json = {
-        "username" : email,
+        "email" : email,
         "password" : password
     }
 
@@ -23,9 +23,9 @@ function loginUser(){
 }
 
 function toMainPage(token){
-    document.cookie = `token=${token}`;
+    const iu = token.token;
+    document.cookie = `token=${iu}`;
     document.cookie = `user-email=${email}`;
-    document.cookie = "userId=1";
     window.history.back();
 }
 

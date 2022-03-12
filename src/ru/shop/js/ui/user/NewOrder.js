@@ -25,22 +25,21 @@ function fillInfo(order){
     });
 }
 
-function showReceiving(page){
-    const receivings = page.content;
+function showReceiving(receivings){
     let idSuffix = 0;
     receivings.forEach(receiving => {
         const radio = document.createElement("input");
         radio.type = "radio";
         radio.id = "radio" + idSuffix;
         radio.name = "receive";
-        radio.value = receiving.id;
+        radio.value = receiving._id;
         if(idSuffix === 0){
             radio.setAttribute("checked", "");
         }
 
         const label = document.createElement("label");
         label.for = radio.getAttribute("id");
-        label.textContent = receiving.receiveMethod + ". Address: " + receiving.address;
+        label.textContent = receiving.method + ". Address: " + receiving.address;
 
         const br = document.createElement("br");
 
@@ -53,7 +52,7 @@ function showReceiving(page){
 }
 
 function showPaymentType(list){
-    createRadioButton(list, "payment-type", "paymentType", "paymentType", true);
+    createRadioButton(list, "payment-type", "paymentType", true);
 }
 
 function doOrder(){
@@ -64,10 +63,11 @@ function doOrder(){
     data = {
         "orderStatus" : "PENDING",
         "paymentType" : payType,
-        "billStatus" : "COMPLETED"
+        "billStatus" : "COMPLETED",
+        "receiving" : receiveId
     };
 
-    updateNewOrder(orderId, JSON.stringify(data), receiveId);
+    updateOrder(orderId, JSON.stringify(data));
 
     window.location.href = "account.html";
 }

@@ -1,5 +1,5 @@
-function createSelectedProduct(userId, goodsId, json){
-    return $.ajax({url : `http://localhost:8080/users/${userId}/selected-products?goodsId=${goodsId}`,
+function createSelectedProduct(userEmail, goodsId, json){
+    return $.ajax({url : `http://localhost:8080/selected-products?userEmail=${userEmail}&goodsId=${goodsId}`,
         type : "POST",
         contentType : "application/json",
         dataType : "json",

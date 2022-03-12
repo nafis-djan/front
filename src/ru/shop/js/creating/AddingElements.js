@@ -52,12 +52,12 @@ function createImage(width, height, idSuffix){
     return img;
 }
 
-function createRadioButton(list, divName, radioName, valueName, isDefault){
-    const content = list.collection;
+function createRadioButton(list, divName, radioName, isDefault){
+    const content = list.content;
     let idSuffix = 0;
     content.forEach(el => {
-        if(el[valueName] !== "CREATING") {
-            const value = el[valueName];
+        if(el !== "CREATING") {
+            const value = el;
             const radio = document.createElement("input");
             radio.type = "radio";
             radio.id = "radio" + idSuffix;

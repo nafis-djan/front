@@ -1,5 +1,5 @@
-function getOrders(userId, page, size){
-    return $.ajax({url : `http://localhost:8080/users/${userId}/orders?page=${page}&size=${size}`,
+function getOrdersByUserEmail(email){
+    return $.ajax({url : `http://localhost:8080/orders/user-email/${email}`,
         headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
     });
 }
@@ -10,20 +10,9 @@ function getOrderById(id){
     });
 }
 
-function updateNewOrder(orderId, json, receiveId){
-    return $.ajax({url : `http://localhost:8080/orders/${orderId}?receivingId=${receiveId}`,
-        type : "PATCH",
-        contentType : "application/json",
-        dataType : "json",
-        data: json,
-        headers: {"Access-Control-Allow-Origin": "*",
-            "AUTHORIZATION" : `${$.cookie("token")}`},
-        crossDomain: true});
-}
-
 function updateOrder(orderId, json){
     return $.ajax({url : `http://localhost:8080/orders/${orderId}`,
-        type : "PATCH",
+        type : "PUT",
         contentType : "application/json",
         dataType : "json",
         data: json,

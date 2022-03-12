@@ -16,8 +16,8 @@ function createOrderElements(divName, el, idSuffix){
 
     const link = document.createElement("a");
     link.href = "../user/order-info.html";
-    link.textContent = el.id;
-    link.setAttribute("onclick", `toOrderInfoPage(${el.id})`);
+    link.textContent = el._id;
+    link.setAttribute("onclick", `toOrderInfoPage('${el._id}')`);
 
     const price = document.createElement("span");
     price.textContent = el.totalPrice;
@@ -38,15 +38,15 @@ function toOrderInfoPage(orderId){
     localStorage.setItem("orderId", orderId);
 }
 
-function fillInfo(order){
+function fillInfo(order, receiving){
     const totalPrice = document.querySelector("#total-price");
     totalPrice.textContent = order.totalPrice;
 
     const receiveMethod = document.querySelector("#receiveMethod");
-    receiveMethod.textContent = order.receiving.receiveMethod;
+    receiveMethod.textContent = receiving.method;
 
     const address = document.querySelector("#address");
-    address.textContent = order.receiving.address;
+    address.textContent = receiving.address;
 
     const payMethod = document.querySelector("#paymentType");
     payMethod.textContent = order.paymentType;
