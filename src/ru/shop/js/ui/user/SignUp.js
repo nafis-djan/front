@@ -1,8 +1,9 @@
 let result;
+let email;
 
 function getJson(){
     const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
+    email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const phone = document.getElementById("phone").value;
 
@@ -37,7 +38,7 @@ function signUpUser(){
 }
 
 function toMainPage(token){
-    document.cookie = `token=${token}`;
-    document.cookie = "userId=1";
+    document.cookie = `token=${token.token}`;
+    document.cookie = `user-email=${email}`;
     window.location.href = "main.html"
 }

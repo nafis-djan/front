@@ -1,9 +1,9 @@
-const employeeId = localStorage.getItem("employeeId");
+const employeeEmail = localStorage.getItem("employee-email");
 
 start();
 
 function start(){
-    const employee = getUserById(employeeId);
+    const employee = getUserByEmail(employeeEmail);
     employee.then(empl => {
         fillFields(empl);
     });
@@ -26,7 +26,7 @@ function updateEmployee(){
         "email" : email
     }
 
-    const updated = updateUser(employeeId, JSON.stringify(json));
+    const updated = updateUser(employeeEmail, JSON.stringify(json));
     updated.then(data => {
         window.history.back();
     });

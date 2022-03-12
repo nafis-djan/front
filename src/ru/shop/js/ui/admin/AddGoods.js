@@ -1,8 +1,8 @@
 function getJson(){
     const name = document.getElementById("name").value;
     const price = document.getElementById("price").value;
-    const producerId = document.getElementById("producer-id").value;
-    const categoryId = document.getElementById("category-id").value;
+    const producer = document.getElementById("producer").value;
+    const category = document.getElementById("category").value;
     const count = document.getElementById("count").value;
     const imageUrl = document.getElementById("image").value;
 
@@ -10,10 +10,12 @@ function getJson(){
         "name" : name,
         "price" : price,
         "count" : count,
-        "imageUrl" : imageUrl
+        "imageUrl" : imageUrl,
+        "producer" : producer,
+        "category" : category
     }
 
-    const goods = createGoods(JSON.stringify(json), producerId, categoryId);
+    const goods = createGoods(JSON.stringify(json));
     goods.then(data => {
         window.history.back();
     })

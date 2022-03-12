@@ -1,19 +1,15 @@
-const page = 0;
-const size = 15;
-
 start();
 
 function start(){
-    const goods = getAllGoods(page, size);
+    const goods = getAllGoods();
     goods.then(page => {
        showGoods(page);
     });
 }
 
-function showGoods(data){
-    const content = data.content;
+function showGoods(goods){
     let idSuffix = 0;
-    content.forEach(el => {
+    goods.forEach(el => {
         const outBlock = createOutBlock(idSuffix);
         const blockImage = createLeftBlock(idSuffix);
         const blockInfo = createRightBlock(idSuffix);
@@ -31,11 +27,11 @@ function showGoods(data){
 
         const editButton = document.createElement("button");
         editButton.textContent = "Edit";
-        editButton.setAttribute("onclick", `editGoods(${el.id})`);
+        editButton.setAttribute("onclick", `editGoods('${el._id}')`);
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.setAttribute("onclick", `removeGoods(${el.id})`);
+        deleteButton.setAttribute("onclick", `removeGoods('${el._id}')`);
 
         document.querySelector("#middle-block").appendChild(outBlock);
         document.querySelector("#" + outBlock.getAttribute("id")).appendChild(blockImage);
@@ -59,5 +55,5 @@ function editGoods(id){
 
 function removeGoods(id){
     deleteGoods(id);
-    window.history.back();
+    window.location.reload();
 }

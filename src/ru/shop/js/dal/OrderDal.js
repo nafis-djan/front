@@ -10,6 +10,12 @@ function getOrderById(id){
     });
 }
 
+function getAllOrders(){
+    return $.ajax({url : `http://localhost:8080/orders`,
+        headers : {"AUTHORIZATION" : `${$.cookie("token")}`}
+    });
+}
+
 function updateOrder(orderId, json){
     return $.ajax({url : `http://localhost:8080/orders/${orderId}`,
         type : "PUT",

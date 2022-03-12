@@ -7,7 +7,8 @@ function getJson(){
 
     const json = {
         "email" : email,
-        "password" : password
+        "password" : password,
+        "role" : "USER"
     }
 
     result = JSON.stringify(json);
@@ -23,8 +24,7 @@ function loginUser(){
 }
 
 function toMainPage(token){
-    const iu = token.token;
-    document.cookie = `token=${iu}`;
+    document.cookie = `token=${token.token}`;
     document.cookie = `user-email=${email}`;
     window.history.back();
 }

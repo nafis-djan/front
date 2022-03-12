@@ -8,9 +8,8 @@ function start(){
 }
 
 function showList(list){
-    const content = list.content;
     let idSuffix = 0;
-    content.forEach(el => {
+    list.forEach(el => {
         const outBlock = createOutBlock(idSuffix);
         const blockInfo = createLeftBlock(idSuffix);
         const blockButton = createRightBlock(idSuffix);
@@ -22,7 +21,7 @@ function showList(list){
 
         const idField = document.createElement("p");
         idField.setAttribute("id", "p-id" + idSuffix);
-        idField.textContent = `ID: ${el.id}`;
+        idField.textContent = `ID: '${el._id}'`;
 
         const emailField = document.createElement("p");
         emailField.setAttribute("id", "p-email" + idSuffix);
@@ -30,11 +29,11 @@ function showList(list){
 
         const editButton = document.createElement("button");
         editButton.textContent = "Edit";
-        editButton.setAttribute("onclick", `editEmployee(${el.id})`);
+        editButton.setAttribute("onclick", `editEmployee('${el.email}')`);
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.setAttribute("onclick", `deleteEmpl(${el.id})`);
+        deleteButton.setAttribute("onclick", `deleteEmpl('${el.email}')`);
 
         document.querySelector("#middle-block").appendChild(outBlock);
         document.querySelector("#" + outBlock.getAttribute("id")).appendChild(blockInfo);
@@ -50,12 +49,12 @@ function showList(list){
     });
 }
 
-function editEmployee(id){
-    localStorage.setItem("employeeId", id);
+function editEmployee(email){
+    localStorage.setItem("employee-email", email);
     window.location.href = "edit-employee.html";
 }
 
-function deleteEmpl(id){
-    deleteEmployee(id);
+function deleteEmpl(email){
+    deleteEmployee(email);
     window.location.reload();
 }

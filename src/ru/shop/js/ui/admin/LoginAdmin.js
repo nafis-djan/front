@@ -6,8 +6,9 @@ function getJson(){
     const password = document.getElementById("password").value;
 
     const json = {
-        "username" : email,
-        "password" : password
+        "email" : email,
+        "password" : password,
+        "role" : "ADMIN"
     }
 
     result = JSON.stringify(json);
@@ -23,8 +24,7 @@ function loginAdmin(){
 }
 
 function toStartPage(token){
-    document.cookie = `token=${token}; path=/`;
+    document.cookie = `token=${token.token}; path=/`;
     document.cookie = `admin-email=${email}`;
-    document.cookie = "adminId=1";
     window.location.href = "admin-main.html";
 }

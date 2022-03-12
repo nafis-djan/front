@@ -9,7 +9,7 @@ function getJson(){
         "name" : name,
         "email" : email,
         "password" : password,
-        "role" : "USER"
+        "role" : "EMPLOYEE"
     }
 
     result = JSON.stringify(json);

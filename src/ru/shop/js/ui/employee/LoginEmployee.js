@@ -6,8 +6,9 @@ function getJson(){
     const password = document.getElementById("password").value;
 
     const json = {
-        "username" : email,
-        "password" : password
+        "email" : email,
+        "password" : password,
+        "role" : "EMPLOYEE"
     }
 
     result = JSON.stringify(json);
@@ -23,8 +24,7 @@ function loginEmployee(){
 }
 
 function toStartPage(token){
-    document.cookie = `token=${token}; path=/`;
+    document.cookie = `token=${token.token}; path=/`;
     document.cookie = `employee-email=${email}`;
-    document.cookie = "employeeId=1";
     window.location.href = "orders.html";
 }

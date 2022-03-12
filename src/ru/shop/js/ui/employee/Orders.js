@@ -1,8 +1,5 @@
 const radioButtonName = "orderStatus";
 const divForRadioButName = "order-statuses";
-const orderStatusValueName = "orderStatus";
-const page = 0;
-const size = 10;
 
 let orderStatus = localStorage.getItem("status");
 let searchId = localStorage.getItem("searchId");
@@ -26,8 +23,8 @@ function start(){
     });
 
     if(searchId === null) {
-        const ordersPage = getOrders(1, page, size);
-        ordersPage.then(data => {
+        const orders = getAllOrders();
+        orders.then(data => {
             showOrders(data, orderStatus);
         });
     } else {
@@ -47,7 +44,7 @@ function addHeaderButton(){
 }
 
 function showOrderStatuses(orderStatuses){
-    createRadioButton(orderStatuses, divForRadioButName, radioButtonName, orderStatusValueName, false);
+    createRadioButton(orderStatuses, divForRadioButName, radioButtonName, false);
 }
 
 function doFilter(){
@@ -56,17 +53,16 @@ function doFilter(){
     document.location.reload();
 }
 
-function showOrders(data, orderStatus){
-    const content = data.content;
+function showOrders(orders, orderStatus){
     let idSuffix = 0;
-    content.forEach(el => {
+    orders.forEach(el => {
         if(orderStatus !== null && el.orderStatus !== orderStatus) {
             return;
         }
         const edit = document.createElement("button");
         edit.id = "button-edit";
         edit.textContent = "Edit status";
-        edit.setAttribute("onclick", `editOrder(${el.id})`);
+        edit.setAttribute("onclick", `editOrder('${el._id}')`);
         document.querySelector("#middle-block").appendChild(edit);
         createOrderElements("middle-block", el, idSuffix);
 
@@ -85,7 +81,7 @@ function updateOrderStatus(){
     id.textContent = "ID: " + `${orderId}`;
     document.querySelector("#right-block").appendChild(id);
 
-    createRadioButton(orderStatuses, "right-block", "updateStatus", orderStatusValueName, true);
+    createRadioButton(orderStatuses, "right-block", "updateStatus", true);
 
     const updateButton = document.createElement("button");
     updateButton.id = "updateButton";

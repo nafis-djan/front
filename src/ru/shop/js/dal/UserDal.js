@@ -36,15 +36,15 @@ function getAllEmployees(){
     });
 }
 
-function deleteEmployee(id){
-    $.ajax({url : `http://localhost:8080/users/${id}`,
+function deleteEmployee(email){
+    $.ajax({url : `http://localhost:8080/users/${email}`,
         type : "DELETE",
         headers : {"authorization" : `${$.cookie("token")}`}
     });
 }
 
-function updateUser(id, json){
-    return $.ajax({url : `http://localhost:8080/users/${id}`,
+function updateUser(email, json){
+    return $.ajax({url : `http://localhost:8080/users/${email}`,
         type : "PUT",
         contentType : "application/json",
         dataType : "json",
